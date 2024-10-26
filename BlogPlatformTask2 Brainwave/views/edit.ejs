@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="bg-zinc-900 min-h-screen w-full font-[Gilroy] text-white p-10">
+    <div class="w-full flex justify-end">
+      <a class="bg-red-500 px-3 py-2 rounded-md text-sm inline-block" href="/logout">Logout</a>
+    </div>
+   
+    <h5 class="mb-5">edit your Post</h5>
+
+    <div class="h-[50vh] w-full flex items-center justify-center flex-col">
+      <form action="/update/<%= post._id %>" method="post">
+        <label for="postContent" class="sr-only">Post Content</label>
+  
+        <textarea class="bg-transparent resize-none h-[30vh] w-[40vw] border-[1px] outline-none border-zinc-600 p-3 rounded"
+          name="content" placeholder="Got something to say? Go ahead...."><%= post.content %></textarea>
+  
+      <div class="flex items-center justify-center">
+        <input type="submit"
+        class="px-3 py-2 block rounded-md mt-2 w-40 text-sm bg-blue-400 text-black font-semibold "
+        value="Update Post">
+      </div>
+      </form>
+    </div>
+ 
+   
+  </div>
+</body>
+
+</html>
